@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>企业工具 | 注册、税负、用工、个税、残保金、高企自检 - 企服驿站</title>
+<meta name="description" content="企服驿站企业工具箱：注册资本印花税、小规模与一般纳税人对比、社保公积金成本、企业所得税、个税与到手工资、残保金、离职补偿、高企条件自检、研发加计扣除、合同印花税、商标 45 类、名称自检，全部在浏览器本地计算。">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="企服驿站">
+<meta property="og:title" content="企业工具 | 注册资本、税负、用工成本、商标类别、名称自查 - 企服驿站">
+<meta property="og:description" content="企服驿站企业工具箱：注册资本印花税、小规模与一般纳税人对比、社保公积金成本、企业所得税、个税与到手工资、残保金、离职补偿、高企条件自检、研发加计扣除、合同印花税、商标 45 类、名称自检，全部在浏览器本地计算。">
+<meta property="og:image" content="assets/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="企业工具 | 注册资本、税负、用工成本、商标类别、名称自查 - 企服驿站">
+<meta name="twitter:description" content="企服驿站企业工具箱：注册资本印花税、小规模与一般纳税人对比、社保公积金成本、企业所得税、个税与到手工资、残保金、离职补偿、高企条件自检、研发加计扣除、合同印花税、商标 45 类、名称自检，全部在浏览器本地计算。">
+<meta name="twitter:image" content="assets/img/og.png">
+<link rel="icon" href="assets/img/favicon.png" type="image/png" sizes="128x128">
+<link rel="stylesheet" href="assets/css/base.css?v=20261116d">
+<link rel="stylesheet" href="assets/css/layout.css?v=20261116d">
+<link rel="stylesheet" href="assets/css/components.css?v=20261116d">
+<link rel="stylesheet" href="assets/css/pages.css?v=20261116d">
+<link rel="stylesheet" href="assets/css/responsive.css?v=20261116d">
+</head>
+<body>
+<a class="skip-link" href="#main">跳到主要内容</a>
+<header class="site-header" id="site-header" data-page="tools"></header>
+
+<main id="main">
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">首页</a><span class="sep">/</span><span class="current">企业工具</span>
+      </div>
+      <h1>企业工具箱</h1>
+      <p>十二个常用测算与自查工具，数据全部在本地计算，不上传服务器。结果可用于内部预算与方案比较，正式办理以实际核定为准。</p>
+    </div>
+  </section>
+
+  <section class="section-sm">
+    <div class="container">
+      <div class="tool-filter" role="group" aria-label="按业务筛选工具">
+        <span class="filter-label">按业务筛选</span>
+        <button class="chip is-active" data-filter="all" type="button" aria-pressed="true">全部 <span class="chip-count">12</span></button>
+        <button class="chip" data-filter="财税测算" type="button" aria-pressed="false">财税测算 <span class="chip-count">5</span></button>
+        <button class="chip" data-filter="用工成本" type="button" aria-pressed="false">用工成本 <span class="chip-count">4</span></button>
+        <button class="chip" data-filter="资质与合规" type="button" aria-pressed="false">资质与合规 <span class="chip-count">3</span></button>
+        <span class="filter-result">当前显示 <b id="tool-filter-count">12</b> 个</span>
+      </div>
+
+      <div class="tool-grid">
+        <article class="tool-card" data-kind="财税测算">
+          <div class="tool-card-top">
+            <span class="icon-box">@@icon:building@@</span>
+            <span class="tool-kind">财税测算</span>
+          </div>
+          <h3>注册资本与印花税测算</h3>
+          <p>按认缴资本测算资金账簿印花税，并提示股东责任边界。</p>
+          <div class="tool-card-foot">
+            <span class="tool-meta">本地计算 · 无需登录</span>
+            <button class="tool-open" data-open="tool-capital" type="button">开始测算 @@icon:arrowRight@@</button>
+          </div>
+        </article>
+        <article class="tool-card" data-kind="财税测算">
+          <div class="tool-card-top">
+            <span class="icon-box">@@icon:chart@@</span>
+            <span class="tool-kind">财税测算</span>
+          </div>
+          <h3>小规模 vs 一般纳税人</h3>
+          <p>输入营业额与可抵扣进项，直接看两种身份的增值税差额。</p>
+          <div class="tool-card-foot">
+            <span class="tool-meta">本地计算 · 无需登录</span>
+            <button class="tool-open" data-open="tool-vat" type="button">开始对比 @@icon:arrowRight@@</button>
+          </div>
+        </article>
+        <article class="tool-card" data-kind="用工成本">
+          <div class="tool-card-top">
+            <span class="icon-box">@@icon:shield@@</span>
+            <span class="tool-kind">用工成本</span>
+          </div>
+          <h3>社保公积金用工成本</h3>
+          <p>按北京缴费基数测算每招一人的单位成本与个人到手。</p>
+          <div class="tool-card-foot">
+            <span class="tool-meta">本地计算 · 无需登录</span>
+            <button class="tool-open" data-open="tool-payroll" type="button">开始测算 @@icon:arrowRight@@</button>
+          </div>
+        </article>
+        <article class="tool-card" data-kind="财税测算">
+          <div class="tool-card-top">
+            <span class="icon-box">@@icon:calc@@</span>
+            <span class="tool-kind">财税测算</span>
+          </div>
+          <h3>企业所得税测算</h3>
+          <p>对比小微优惠、高新技术企业 15% 与标准 25% 的税额差异。</p>
+          <div class="tool-card-foot">
+            <span class="tool-meta">本地计算 · 无需登录</span>
+            <button class="tool-open" data-open="tool-cit" type="button">开始测算 @@icon:arrowRight@@</button>
+          </div>
+        </article>
+        <article class="tool-card" data-kind="资质与合规">
+          <div class="tool-card-top">
+            <span class="icon-box">@@icon:layers@@</span>
+            <span class="tool-kind">资质与合规</span>
+          </div>
+          <h3>商标 45 类速查</h3>
+          <p>按关键词查尼斯分类，快速确定核心类别与防御类别。</p>
+          <div class="tool-card-foot">
+            <span class="tool-meta">本地计算 · 无需登录</span>
+            <button class="tool-open" data-open="tool-trademark" type="button">查询类别 @@icon:arrowRight@@</button>
+          </div>
+        </article>
+        <article class="tool-card" data-kind="资质与合规">
+          <div class="tool-card-top">
+            <span class="icon-box">@@icon:badge@@</span>
+            <span class="tool-kind">资质与合规</span>
+          </div>
+          <h3>公司名称合规自检</h3>
+          <p>检查名称结构是否完整、是否踩到常见禁用表述。</p>
+          <div class="tool-card-foot">
+            <span class="tool-meta">本地计算 · 无需登录</span>
+            <button class="tool-open" data-open="tool-name" type="button">开始自查 @@icon:arrowRight@@</button>
+          </div>
+        </article>
+        <article class="tool-card" data-kind="用工成本">
+          <div class="tool-card-top">
+            <span class="icon-box">@@icon:user@@</span>
+            <span class="tool-kind">用工成本</span>
+          </div>
+          <h3>个税与到手工资</h3>
+          <p>按月薪、五险一金与专项附加扣除，估算全年个税和实际到手。</p>
+          <div class="tool-card-foot">
+            <span class="tool-meta">本地计算 · 无需登录</span>
+            <button class="tool-open" data-open="tool-iit" type="button">开始测算 @@icon:arrowRight@@</button>
+          </div>
+        </article>
+        <article class="tool-card" data-kind="用工成本">
+          <div class="tool-card-top">
+            <span class="icon-box">@@icon:certificate@@</span>
+            <span class="tool-kind">用工成本</span>
+          </div>
+          <h3>残疾人就业保障金</h3>
+          <p>按 1.5% 比例与分档减缴，估算年度应缴额，30 人以下自动判免征。</p>
+          <div class="tool-card-foot">
+            <span class="tool-meta">本地计算 · 无需登录</span>
+            <button class="tool-open" data-open="tool-disability" type="button">开始测算 @@icon:arrowRight@@</button>
+          </div>
+        </article>
+        <article class="tool-card" data-kind="用工成本">
+          <div class="tool-card-top">
+            <span class="icon-box">@@icon:doc@@</span>
+            <span class="tool-kind">用工成本</span>
+          </div>
+          <h3>离职经济补偿（N）</h3>
+          <p>按工作年限与月工资算 N，自动处理 3 倍社平封顶与 12 年上限。</p>
+          <div class="tool-card-foot">
+            <span class="tool-meta">本地计算 · 无需登录</span>
+            <button class="tool-open" data-open="tool-severance" type="button">开始测算 @@icon:arrowRight@@</button>
+          </div>
+        </article>
+        <article class="tool-card" data-kind="资质与合规">
+          <div class="tool-card-top">
+            <span class="icon-box">@@icon:target@@</span>
+            <span class="tool-kind">资质与合规</span>
+          </div>
+          <h3>高新技术企业条件自检</h3>
+          <p>6 项硬条件逐条核对，直接给出研发费、科技人员、高新收入占比是否达标。</p>
+          <div class="tool-card-foot">
+            <span class="tool-meta">本地计算 · 无需登录</span>
+            <button class="tool-open" data-open="tool-hn" type="button">开始自检 @@icon:arrowRight@@</button>
+          </div>
+        </article>
+        <article class="tool-card" data-kind="财税测算">
+          <div class="tool-card-top">
+            <span class="icon-box">@@icon:spark@@</span>
+            <span class="tool-kind">财税测算</span>
+          </div>
+          <h3>研发费用加计扣除</h3>
+          <p>按 100% 或 120% 加计，估算能少缴多少企业所得税。</p>
+          <div class="tool-card-foot">
+            <span class="tool-meta">本地计算 · 无需登录</span>
+            <button class="tool-open" data-open="tool-rd" type="button">开始测算 @@icon:arrowRight@@</button>
+          </div>
+        </article>
+        <article class="tool-card" data-kind="财税测算">
+          <div class="tool-card-top">
+            <span class="icon-box">@@icon:book@@</span>
+            <span class="tool-kind">财税测算</span>
+          </div>
+          <h3>合同印花税速查</h3>
+          <p>按合同类型与金额查税率、算税额，含小微减半与双方合计。</p>
+          <div class="tool-card-foot">
+            <span class="tool-meta">本地计算 · 无需登录</span>
+            <button class="tool-open" data-open="tool-stamp" type="button">开始查询 @@icon:arrowRight@@</button>
+          </div>
+        </article>
+      </div>
+
+      <!-- ============ 工具面板容器 ============ -->
+      <div id="tool-panels">
+        <div class="tool-panel" id="tool-capital"></div>
+        <div class="tool-panel" id="tool-vat"></div>
+        <div class="tool-panel" id="tool-payroll"></div>
+        <div class="tool-panel" id="tool-cit"></div>
+        <div class="tool-panel" id="tool-trademark"></div>
+        <div class="tool-panel" id="tool-name"></div>
+        <div class="tool-panel" id="tool-iit"></div>
+        <div class="tool-panel" id="tool-disability"></div>
+        <div class="tool-panel" id="tool-severance"></div>
+        <div class="tool-panel" id="tool-hn"></div>
+        <div class="tool-panel" id="tool-rd"></div>
+        <div class="tool-panel" id="tool-stamp"></div>
+      </div>
+
+      <div class="notice mt-24">
+        @@icon:info@@
+        <span>以上测算基于公开口径的简化模型，未考虑专项附加扣除、地方附加比例差异、税收优惠叠加限制等因素。涉及申报与筹划，请以顾问核算结果为准。</span>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer" id="site-footer"></footer>
+<script src="assets/js/core.js?v=20261116d"></script>
+<script src="assets/js/nav.js?v=20261116d"></script>
+<script src="assets/js/tools.js?v=20261116d"></script>
+</body>
+</html>

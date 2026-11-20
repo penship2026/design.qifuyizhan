@@ -1,0 +1,251 @@
+{
+  "_note": "政策资格预判的机检规则。fields 决定问用户哪几道题，rules 决定每条政策能用哪几条机器能判的条件。只做“机检”，不替代官方审核；无法机检的官方条件放 notes 里让用户自查。",
+  "updatedAt": "2026-11-17",
+  "fields": [
+    {
+      "id": "stage",
+      "label": "企业目前阶段",
+      "options": [
+        { "id": "prep", "label": "还没注册", "v": 0 },
+        { "id": "start", "label": "刚成立 1 年内", "v": 0.5 },
+        { "id": "grow", "label": "成长期", "v": 3 },
+        { "id": "mature", "label": "成熟期", "v": 6 }
+      ]
+    },
+    {
+      "id": "years",
+      "label": "成立年限",
+      "options": [
+        { "id": "lt1", "label": "不足 1 年", "v": 0.5 },
+        { "id": "1-3", "label": "1–3 年", "v": 2 },
+        { "id": "3-5", "label": "3–5 年", "v": 4 },
+        { "id": "gt5", "label": "5 年以上", "v": 6 }
+      ]
+    },
+    {
+      "id": "revenue",
+      "label": "年营业收入",
+      "hint": "不含税",
+      "options": [
+        { "id": "lt500", "label": "500 万以下", "v": 400 },
+        { "id": "500-2000", "label": "500–2000 万", "v": 1500 },
+        { "id": "2000-5000", "label": "2000–5000 万", "v": 3500 },
+        { "id": "5000-2e", "label": "5000 万–2 亿", "v": 12000 },
+        { "id": "gt2e", "label": "2 亿以上", "v": 30000 }
+      ]
+    },
+    {
+      "id": "employees",
+      "label": "从业人数",
+      "options": [
+        { "id": "lt10", "label": "10 人以下", "v": 8 },
+        { "id": "10-50", "label": "10–50 人", "v": 30 },
+        { "id": "50-200", "label": "50–200 人", "v": 120 },
+        { "id": "200-500", "label": "200–500 人", "v": 350 },
+        { "id": "gt500", "label": "500 人以上", "v": 800 }
+      ]
+    },
+    {
+      "id": "industry",
+      "label": "主要行业",
+      "options": [
+        { "id": "tech", "label": "科技 / 软件" },
+        { "id": "manufacture", "label": "生产制造" },
+        { "id": "trade", "label": "批发零售" },
+        { "id": "catering", "label": "住宿餐饮" },
+        { "id": "realestate", "label": "房地产 / 建筑" },
+        { "id": "service", "label": "专业服务 / 租赁商务" },
+        { "id": "other", "label": "其他" }
+      ]
+    },
+    {
+      "id": "rd",
+      "label": "有研发活动吗",
+      "options": [
+        { "id": "yes", "label": "有，且在归集费用" },
+        { "id": "no", "label": "没有" },
+        { "id": "unknown", "label": "不确定" }
+      ]
+    },
+    {
+      "id": "region",
+      "label": "注册地",
+      "options": [
+        { "id": "yizhuang", "label": "北京经开区" },
+        { "id": "beijing", "label": "北京其他区" },
+        { "id": "other", "label": "外地" }
+      ]
+    },
+    {
+      "id": "credit",
+      "label": "信用状况",
+      "hint": "纳税信用 / 失信名单",
+      "options": [
+        { "id": "good", "label": "正常，无处罚" },
+        { "id": "bad", "label": "有失信或处罚" },
+        { "id": "unknown", "label": "不确定" }
+      ]
+    }
+  ],
+  "rules": {
+    "pol-small-vat": {
+      "criteria": [
+        { "field": "revenue", "op": "lte", "value": 500, "label": "年应税销售额不超过 500 万元（小规模纳税人标准）" }
+      ],
+      "notes": ["已主动登记为一般纳税人的，即使销售额低于 500 万也不适用", "销售额按不含税口径计算"]
+    },
+    "pol-small-profit": {
+      "criteria": [{ "field": "employees", "op": "lte", "value": 300, "label": "从业人数不超过 300 人" }],
+      "notes": ["年利润总额不超过 300 万元", "资产总额不超过 5000 万元", "从事国家非限制和禁止行业"]
+    },
+    "pol-rd-deduction": {
+      "criteria": [
+        { "field": "rd", "op": "eq", "value": "yes", "label": "确有研发活动并归集研发费用" },
+        {
+          "field": "industry",
+          "op": "notin",
+          "value": ["trade", "catering", "realestate", "service"],
+          "label": "不属于批发零售、住宿餐饮、房地产、租赁和商务服务等负面清单行业"
+        }
+      ],
+      "notes": ["研发活动需符合“为获得新技术、新产品、新工艺”的定义", "需按项目设置辅助账归集费用"]
+    },
+    "pol-vat-refund": {
+      "criteria": [
+        { "field": "credit", "op": "eq", "value": "good", "label": "纳税信用等级为 A 级或 B 级、无失信记录" },
+        { "field": "years", "op": "gte", "value": 3, "label": "成立满 36 个月（申请前 36 个月无骗税、虚开等情形）" }
+      ],
+      "notes": ["存在进项留抵是前提，需按主管税务机关口径计算可退税额", "不属于政策规定的不得退还情形"]
+    },
+    "pol-gaoxin": {
+      "criteria": [
+        { "field": "years", "op": "gte", "value": 1, "label": "注册成立满一年以上" },
+        {
+          "field": "industry",
+          "op": "notin",
+          "value": ["trade", "catering", "realestate"],
+          "label": "主营业务属于高新技术领域（非批发零售、住宿餐饮、房地产）"
+        },
+        { "field": "rd", "op": "eq", "value": "yes", "label": "有持续研发活动并归集研发费用" }
+      ],
+      "notes": [
+        "近三年无重大安全、质量事故或严重环境违法",
+        "高新技术产品（服务）收入占同期总收入不低于 60%",
+        "研发费用占销售收入比例按规模分档：5,000 万以下不低于 5%、5,000 万–2 亿不低于 4%、2 亿以上不低于 3%",
+        "科技人员占当年职工总数不低于 10%",
+        "需有知识产权（Ⅰ类/Ⅱ类）与研发费用占比支撑"
+      ]
+    },
+    "pol-specialized": {
+      "criteria": [
+        { "field": "years", "op": "gte", "value": 3, "label": "连续经营 3 年以上" },
+        { "field": "rd", "op": "eq", "value": "yes", "label": "有持续研发投入与研发活动" },
+        { "field": "employees", "op": "lte", "value": 500, "label": "符合中小企业划型（从业人数不超过 500 人）" },
+        { "field": "credit", "op": "eq", "value": "good", "label": "近三年无重大安全、质量、环保事故" }
+      ],
+      "notes": ["需有主导产品与稳定的研发/生产体系", "创新型中小企业与专精特新的评价指标不同，按当年通知打分"]
+    },
+    "pol-tech-sme": {
+      "criteria": [
+        { "field": "employees", "op": "lte", "value": 500, "label": "职工总数不超过 500 人" },
+        { "field": "rd", "op": "eq", "value": "yes", "label": "有研发活动并归集研发费用" },
+        { "field": "revenue", "op": "lte", "value": 20000, "label": "年销售收入不超过 2 亿元" },
+        {
+          "field": "industry",
+          "op": "notin",
+          "value": ["trade", "catering", "realestate", "service"],
+          "label": "不属于负面清单行业"
+        }
+      ],
+      "notes": ["资产总额不超过 2 亿元", "科技人员占比与研发投入按评价指标打分（满分 100 分，需 60 分以上）"]
+    },
+    "pol-startup-subsidy": {
+      "criteria": [
+        { "field": "stage", "op": "in", "value": ["prep", "start"], "label": "处于筹备期或成立初期" },
+        { "field": "region", "op": "in", "value": ["yizhuang", "beijing"], "label": "在北京注册经营" }
+      ],
+      "notes": ["须为首次创办企业且本人是法定代表人或经营者", "正常经营并依法缴纳社会保险", "未被列入失信名单"]
+    },
+    "pol-social-subsidy": {
+      "criteria": [
+        { "field": "region", "op": "in", "value": ["yizhuang", "beijing"], "label": "在北京参保缴费" },
+        { "field": "credit", "op": "eq", "value": "good", "label": "信用良好、未列入严重失信名单" }
+      ],
+      "notes": ["招用人员须属于政策规定的就业困难人员范围", "需依法参保并按时足额缴费、不裁员少裁员"]
+    },
+    "pol-ip-subsidy": {
+      "criteria": [
+        { "field": "region", "op": "in", "value": ["yizhuang", "beijing"], "label": "在北京地区注册登记" },
+        { "field": "credit", "op": "eq", "value": "good", "label": "未被列入失信名单" }
+      ],
+      "notes": [
+        "专项一申报单位须为专精特新中小企业，并已设知识产权管理制度、部门与人员",
+        "申报专利须为申报期获得授权的高价值专利，并完成专利产品备案",
+        "共有专利由第一顺序专利权人申报；同一期多项扶持按从高不重复",
+        "海外专项须已建立知识产权合规体系与海外风险排查/纠纷应对机制",
+        "原《北京市知识产权资助金管理办法》已于 2025-05-30 废止，勿按旧口径准备"
+      ]
+    },
+    "pol-talent": {
+      "criteria": [
+        {
+          "field": "region",
+          "op": "in",
+          "value": ["yizhuang", "beijing"],
+          "label": "申请单位在本市注册、纳税并缴纳社保"
+        }
+      ],
+      "notes": ["申请人需符合学历、职称、社保年限与岗位要求", "无违法犯罪记录及失信情形", "指标名额按年度分配"]
+    },
+    "pol-startup-loan": {
+      "criteria": [
+        { "field": "credit", "op": "eq", "value": "good", "label": "无不良征信与严重失信记录" },
+        { "field": "employees", "op": "lte", "value": 500, "label": "属于小微企业（从业人数不超过 500 人）" }
+      ],
+      "notes": ["创业者需属于政策扶持对象范围", "小微企业当年新招用符合条件人员需达到规定比例", "贴息比例与额度按当年规定"]
+    },
+    "pol-rd-audit": {
+      "criteria": [{ "field": "rd", "op": "eq", "value": "yes", "label": "已按项目归集研发费用" }],
+      "notes": ["研发活动不得属于负面清单情形", "留存备查资料需按项目归档，保存期按税务要求"]
+    },
+    "pol-registration": {
+      "criteria": [{ "field": "stage", "op": "in", "value": ["prep"], "label": "处于新设登记阶段" }],
+      "notes": ["住所需符合登记要求（产权/租赁凭证齐全）", "经营范围按规范目录勾选"]
+    },
+    "pol-vat-add-deduct": {
+      "criteria": [
+        { "field": "industry", "op": "eq", "value": "manufacture", "label": "属于先进制造业（名单由工信部等部门确定）" }
+      ],
+      "notes": ["须为增值税一般纳税人", "名单内企业按可抵扣进项税额 5% 计提加计抵减额", "抵减前应纳税额为零时可结转下期，未计提的可在适用当期一并计提"]
+    },
+    "pol-six-tax": {
+      "criteria": [
+        { "field": "employees", "op": "lte", "value": 300, "label": "符合小型微利企业人数条件（从业人数不超过 300 人）" }
+      ],
+      "notes": [
+        "若为增值税小规模纳税人，即使人数超过 300 人也可享受",
+        "小型微利企业还须满足年利润总额不超过 300 万元、资产总额不超过 5000 万元",
+        "六税两费均按 50% 幅度减征，可与其它优惠叠加"
+      ]
+    },
+    "pol-gov-procurement": {
+      "criteria": [
+        {
+          "field": "employees",
+          "op": "lte",
+          "value": 500,
+          "label": "按采购标的所属行业划型属于中小企业（从业人数不超过 500 人）"
+        }
+      ],
+      "notes": [
+        "不同行业的划型标准不同（工业、建筑业、软件服务等口径不一），以采购文件要求为准",
+        "投标时须提交《中小企业声明函》并保证内容真实",
+        "小微企业不得将合同分包给大中型企业"
+      ]
+    },
+    "pol-tech-transfer": {
+      "criteria": [{ "field": "rd", "op": "eq", "value": "yes", "label": "确有技术转让或技术开发（研发服务）业务" }],
+      "notes": ["技术合同须在科技主管部门完成认定登记", "免税须向主管税务机关备案并留存资料", "相关技术咨询、技术服务须与技术转让/开发直接相关"]
+    }
+  }
+}

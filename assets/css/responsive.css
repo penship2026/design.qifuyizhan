@@ -1,0 +1,167 @@
+/* ============================================================
+   responsive.css —— 响应式适配
+   断点：1280 / 1080 / 900 / 720 / 520
+   ============================================================ */
+
+/* ---------- 1280 以下 ---------- */
+@media (max-width: 1280px) {
+  .header-inner { gap: 18px; }
+  .header-search { flex-basis: 200px; }
+  .main-nav .nav-item { padding: 0 9px; font-size: 14px; }
+}
+
+@media (max-width: 1080px) {
+  .header-search { display: none; }
+  .footer-grid { grid-template-columns: 1.4fr 1fr 1fr; gap: 30px; }
+  .footer-contact { grid-column: 1 / -1; display: flex; gap: 32px; flex-wrap: wrap; }
+  .footer-contact dd { margin-bottom: 0; }
+
+  .detail-layout { grid-template-columns: minmax(0, 1fr) 300px; gap: 28px; }
+  .hero-inner { gap: 36px; }
+  .quick-grid { grid-template-columns: repeat(2, 1fr); }
+  .quick-item:nth-child(2) { border-right: 0; }
+  .quick-item:nth-child(3), .quick-item:nth-child(4) { border-top: 1px solid var(--line); }
+  .tool-grid { grid-template-columns: repeat(2, 1fr); }
+  .tool-shell-body { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr; }
+  .stat-strip { grid-template-columns: repeat(2, 1fr); }
+  .stat-item:nth-child(2) { border-right: 0; }
+  .stat-item:nth-child(3), .stat-item:nth-child(4) { border-top: 1px solid var(--line); }
+}
+
+/* ---------- 900 以下：切移动端导航 ---------- */
+@media (max-width: 900px) {
+  .main-nav { display: none; }
+  .nav-toggle { display: flex; }
+  .topbar-right { display: none; }
+  .header-inner { height: 64px; justify-content: space-between; }
+  .brand-mark { width: 34px; height: 34px; border-radius: 9px; }
+  .brand-mark svg { width: 18px; height: 18px; }
+  .brand-logo { height: 34px; }
+  .brand-name { font-size: 15px; }
+  .brand-slogan { display: none; }
+  .header-actions .btn { display: none; }
+
+  .hero-inner { grid-template-columns: 1fr; }
+  .hero-sub { max-width: none; }
+  .matcher { max-width: 520px; }
+  .cat-grid, .grid-3, .grid-4, .stage-grid, .steps-horizontal { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .policy-brief { grid-template-columns: 1fr; }
+  .pb-item { border-right: 0; }
+  .detail-layout { grid-template-columns: 1fr; }
+  .sticky-side { position: static; }
+  .policy-row { grid-template-columns: 1fr; }
+  .policy-side { flex-direction: row; align-items: center; justify-content: flex-start; text-align: left; }
+  .process-rail { grid-template-columns: repeat(2, 1fr); }
+  .pr-tab:nth-child(2) { border-right: 0; }
+  .pr-tab:nth-child(3), .pr-tab:nth-child(4) { border-top: 1px solid var(--line); }
+  .cta-band { grid-template-columns: 1fr; }
+  .about-split { grid-template-columns: 1fr; gap: 28px; }
+  .form-grid { grid-template-columns: 1fr; }
+  .tl-item { grid-template-columns: 84px 1fr; gap: 14px; }
+  .float-bar { right: 14px; bottom: 80px; }
+  .float-btn { width: 46px; height: 46px; }
+  .float-btn svg { width: 18px; height: 18px; }
+}
+
+/* 中屏细节 */
+@media (max-width: 940px) and (min-width: 721px) {
+  .grid-auto { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+}
+
+/* ---------- 720 以下 ---------- */
+@media (max-width: 720px) {
+  body { font-size: 14px; }
+  .container { padding-inline: 18px; }
+  .section { padding-block: 44px; }
+  .section-head { margin-bottom: 24px; }
+  .grid-2, .cat-grid, .grid-3, .grid-4, .stage-grid, .steps-horizontal, .tool-grid { grid-template-columns: 1fr; }
+  .stat-num { font-size: 24px; }
+  .stat-item { padding: 18px 20px; }
+  .card, .service-card, .panel, .tool-card { padding: 20px; }
+  .quote-card { padding: 20px; }
+  .step { grid-template-columns: 52px 1fr; gap: 14px; }
+  .step-num { width: 38px; height: 38px; font-size: 13px; }
+  .step::before { left: 19px; top: 40px; }
+  .tool-shell-body { padding: 18px; }
+  .tool-shell-head { padding: 16px 18px; }
+  .tool-shell-head h2 { font-size: 16px; }
+  .detail-hero { padding-block: 28px 36px; }
+  .detail-body { padding-block: 30px; }
+  .panel { padding: 22px 18px; }
+  .panel-title { font-size: 16px; }
+  .quote-card .qc-price { font-size: 21px; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 26px; }
+  .footer-brand { grid-column: 1 / -1; }
+  .footer-contact { grid-column: 1 / -1; gap: 20px; }
+  .footer-bottom { flex-direction: column; align-items: flex-start; }
+  .page-hero { padding-block: 30px; }
+  .breadcrumb { font-size: 12px; }
+  .filter-bar { padding: 12px; }
+  .filter-bar select { flex: 1 1 45%; }
+  .task-item { grid-template-columns: 22px 1fr; }
+  .task-actions { grid-column: 2 / -1; justify-content: flex-start; }
+  .tab-labels { gap: 6px; }
+  .matcher { padding: 20px; }
+  .hero-cta .btn { flex: 1 1 auto; }
+}
+
+/* ---------- 520 以下 ---------- */
+@media (max-width: 520px) {
+  .hero { padding-block: 42px; }
+  .hero h1 { font-size: 27px; }
+  .hero h1 .hl { white-space: normal; }
+  .quick-grid { grid-template-columns: 1fr; }
+  .quick-item { border-right: 0; border-top: 1px solid var(--line); }
+  .quick-item:first-child { border-top: 0; }
+  .form-card { padding: 20px; }
+  .contact-info-card { padding: 20px; }
+  .policy-head h1 { font-size: 22px; }
+  .result-line { font-size: 12px; }
+  .chip { height: 32px; padding: 0 12px; font-size: 12px; }
+  .dh-badges .tag { font-size: 11px; }
+  .dh-price b { font-size: 24px; }
+  .to-value { font-size: 14px; }
+  .float-bar { display: none; }
+  .section-head h2 { font-size: 22px; }
+  .data-table th, .data-table td { padding: 11px 12px; font-size: 13px; }
+  .class-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* 打印 */
+@media print {
+  .site-header, .topbar, .site-footer, .float-bar, .hero-cta, .header-search, .filter-bar { display: none !important; }
+  body { color: #000; background: #fff; }
+  .page-hero, .detail-hero { background: #fff !important; color: #000; padding-block: 12px; }
+  .page-hero h1, .detail-hero h1 { color: #000; }
+  .card, .panel { border-color: #ccc; box-shadow: none; }
+}
+
+/* 算力模型：窄屏信息条折行，内嵌页降高，标签折成 2+1 */
+@media (max-width: 980px) {
+  .compute-tabs { flex-wrap: wrap; }
+  .compute-tab { flex: 1 1 30%; }
+  .compute-strip { gap: 8px 16px; padding: 12px 14px; }
+  .compute-strip-tag { flex-basis: 100%; }
+  .compute-frame-box { height: clamp(480px, calc(100vh - 180px), 720px); }
+}
+@media (max-width: 640px) {
+  .compute-tab { flex: 1 1 46%; }
+  .compute-frame-box { height: 480px; }
+}
+
+/* 政策资格预判：窄屏收成两列 / 单列，选项按钮可横向滚动分组 */
+@media (max-width: 980px) {
+  .elig-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .elig-head { flex-direction: column; align-items: flex-start; gap: 8px; }
+}
+@media (max-width: 640px) {
+  .elig-grid { grid-template-columns: 1fr; }
+  .elig-panel { padding: 18px 16px; }
+  .elig-count { margin-left: 0; width: 100%; }
+}
+
+/* 工具页：窄屏隐藏"当前显示 N 个"，避免筛选条换行后挤在右侧 */
+@media (max-width: 560px) {
+  .filter-result { display: none; }
+}

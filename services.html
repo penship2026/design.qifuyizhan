@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>企业服务 | 工商财税、知识产权、资质许可、体系认证 - 企服驿站</title>
+<meta name="description" content="企服驿站 17 项企业服务清单：公司注册、注册地址、公司变更与注销、代理记账、商标注册、软件著作权、高新技术企业认定、ICP/EDI 许可、ISO9001、AAA 信用等级等，含流程、材料、周期与参考价格。">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="企服驿站">
+<meta property="og:title" content="企业服务 | 工商财税、知识产权、资质许可、体系认证 - 企服驿站">
+<meta property="og:description" content="企服驿站 17 项企业服务清单：公司注册、注册地址、公司变更与注销、代理记账、商标注册、软件著作权、高新技术企业认定、ICP/EDI 许可、ISO9001、AAA 信用等级等，含流程、材料、周期与参考价格。">
+<meta property="og:image" content="assets/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="企业服务 | 工商财税、知识产权、资质许可、体系认证 - 企服驿站">
+<meta name="twitter:description" content="企服驿站 17 项企业服务清单：公司注册、注册地址、公司变更与注销、代理记账、商标注册、软件著作权、高新技术企业认定、ICP/EDI 许可、ISO9001、AAA 信用等级等，含流程、材料、周期与参考价格。">
+<meta name="twitter:image" content="assets/img/og.png">
+<link rel="icon" href="assets/img/favicon.png" type="image/png" sizes="128x128">
+<link rel="stylesheet" href="assets/css/base.css?v=20261116d">
+<link rel="stylesheet" href="assets/css/layout.css?v=20261116d">
+<link rel="stylesheet" href="assets/css/components.css?v=20261116d">
+<link rel="stylesheet" href="assets/css/pages.css?v=20261116d">
+<link rel="stylesheet" href="assets/css/responsive.css?v=20261116d">
+</head>
+<body>
+<a class="skip-link" href="#main">跳到主要内容</a>
+<header class="site-header" id="site-header" data-page="services"></header>
+
+<main id="main">
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">首页</a><span class="sep">/</span><span class="current">企业服务</span>
+      </div>
+      <h1>企业服务清单</h1>
+      <p>每一项都写清了：适合谁办、几步办完、要准备什么、大概多久、参考价格。办不了的情况，我们会直接说。</p>
+      <div class="row" id="hero-chips"></div>
+    </div>
+  </section>
+
+  <section class="section-sm">
+    <div class="container services-layout">
+      <div class="filter-bar">
+        <div class="filter-search">
+          @@icon:search@@
+          <input type="search" id="svc-search" placeholder="搜索服务名称，如「注销」「商标」" aria-label="搜索服务">
+        </div>
+        <select id="svc-cat" aria-label="按分类筛选"></select>
+        <select id="svc-stage" aria-label="按阶段筛选"></select>
+        <select id="svc-sort" aria-label="排序">
+          <option value="default">默认排序</option>
+          <option value="price">价格由低到高</option>
+          <option value="duration">周期由短到长</option>
+        </select>
+        <button class="btn btn-ghost btn-sm" id="svc-reset" type="button">重置</button>
+      </div>
+
+      <div class="result-line">
+        <span>共 <strong id="svc-count">0</strong> 项服务</span>
+        <span id="svc-hint" class="faint">按阶段筛选可快速定位当前该办的事</span>
+      </div>
+
+      <div id="svc-grid" class="grid grid-3"></div>
+      <div id="svc-empty" class="empty-state hide">
+        @@icon:search@@
+        <h3>没有匹配的服务</h3>
+        <p>换个关键词，或直接告诉顾问你的情况，我们帮你判断该办什么。</p>
+        <a class="btn btn-primary mt-16" href="contact.html">发起咨询</a>
+      </div>
+
+      <div class="notice mt-8">
+        @@icon:info@@
+        <span>价格与周期为依据过往案例给出的参考区间，实际以企业具体情况评估后报价。政策类服务的最终结果取决于主管部门审核。</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-alt">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Not Sure</span>
+        <h2>不确定该办哪一项？</h2>
+        <p>多数企业的真实需求是组合的：注册完要记账，记账中发现要补资质，申请资质又需要先有知识产权。可以先看流程向导，或直接预约顾问梳理。</p>
+      </div>
+      <div class="row">
+        <a class="btn btn-primary" href="process.html">打开办事流程向导 @@icon:arrowRight@@</a>
+        <a class="btn btn-ghost" href="contact.html">预约顾问梳理</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer" id="site-footer"></footer>
+<script src="assets/js/core.js?v=20261116d"></script>
+<script src="assets/js/nav.js?v=20261116d"></script>
+<script src="assets/js/services.js?v=20261116d"></script>
+</body>
+</html>

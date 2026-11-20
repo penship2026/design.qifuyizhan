@@ -1,0 +1,51 @@
+{
+  "_note": "本页三个资源市场对应原站「算力模型」导航下的三个子栏目：算力市场 /slpt/、镜像市场 /qyfw/xypt/jxsc/、模型市场 /dmxdypt/。原站用 iframe 直接嵌外部平台，此处保留同样的嵌入方式与同一地址，只换成本站统一外壳，功能不减。",
+  "modules": [
+    {
+      "id": "power",
+      "name": "算力市场",
+      "en": "COMPUTE MARKET",
+      "icon": "chip",
+      "host": "yrsg.gpugeek.com",
+      "url": "https://yrsg.gpugeek.com/computing-power-list",
+      "tagline": "按卡时租 GPU / CPU，训练和推理都能临时扩容",
+      "desc": "把各家闲置算力集中挂牌，按显卡型号、显存、带宽、租期比价，按小时或按天起租。适合模型训练、批量推理、渲染这类“平时用不满、峰值不够用”的活。",
+      "bullets": ["按卡时计费，不用自建机房", "型号与租期可比价，短期项目不必买卡", "训练、推理、渲染三类负载都能挂"],
+      "tip": "在平台内完成注册与下单；算力规格与交付时间以平台实时报价为准。",
+      "cropTop": 60
+    },
+    {
+      "id": "image",
+      "name": "镜像市场",
+      "en": "IMAGE MARKET",
+      "icon": "layers",
+      "host": "yrsg.gpugeek.com",
+      "url": "https://yrsg.gpugeek.com/image",
+      "tagline": "开箱即用的运行环境，省掉配环境的两天",
+      "desc": "预装好框架、驱动与依赖的运行镜像，拉起来就能跑。适合不想在 CUDA、Python 版本、依赖冲突上反复折腾的团队，也适合把内部环境固化成标准镜像复用。",
+      "bullets": ["框架 / 驱动 / 依赖已预装，免手工配置", "按需选择版本，环境可复现", "与算力市场配合，选好镜像直接起实例"],
+      "tip": "镜像来源与版本以平台展示为准；生产环境建议先小规模验证再放量。",
+      "cropTop": 60
+    },
+    {
+      "id": "model",
+      "name": "模型市场",
+      "en": "MODEL MARKET",
+      "icon": "spark",
+      "host": "ai.gpugeek.com",
+      "url": "https://ai.gpugeek.com/",
+      "tagline": "调用现成模型，先用起来再决定要不要自研",
+      "desc": "把常用的大模型、行业模型、智能体能力放到一处，能在线试用也能接 API。适合先验证效果再投入研发的场景：客服问答、文档抽取、内容生成、行业知识问答。",
+      "bullets": ["在线试用，效果先行验证", "提供 API 接入，不必自建推理服务", "可与本站的智能体 / AI 客服方案搭配落地"],
+      "tip": "模型能力、计费与调用额度以平台页面为准；涉及企业数据请先确认数据合规要求。",
+      "cropTop": 60
+    }
+  ],
+  "help": {
+    "serviceId": "suanli-moxing",
+    "serviceName": "算力与模型服务",
+    "title": "不确定选哪种卡、哪个镜像、哪个模型？",
+    "desc": "把业务场景、数据量、预算和上线时间讲清楚，我们给出选型对比与部署路径，再决定买卡、租算力还是直接调 API。"
+  },
+  "embed": { "cropTop": 60, "note": "实测三家平台顶部导航均为 ant-layout-header，fixed，高 60px；平台改版后只需改这里" }
+}

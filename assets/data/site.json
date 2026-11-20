@@ -1,0 +1,91 @@
+{
+  "_note": "站点全局配置。brand.logo 与 contact 中的热线、地址、备案号均取自原站 www.qifuyizhan.com 的实际内容（抓取时间 2026-11-16）。原站联系页的电话 010-123-45678 与邮箱 xxxx@xxx.com 本身是占位值，故未采用；邮箱沿用同域名地址，上线前请替换为真实可收信邮箱，并补充门牌号与网点信息。",
+  "brand": {
+    "name": "企服驿站",
+    "en": "QIFU STATION",
+    "slogan": "一格字节旗下企业全流程服务平台",
+    "description": "从注册到上市，把企业每个阶段该办的事、能拿的政策、好用的工具，一次讲清楚。",
+    "logo": "assets/img/logo.png",
+    "logoWhite": "assets/img/logo-white.png",
+    "logoMark": "assets/img/logo-mark.png",
+    "ogImage": "assets/img/og.png"
+  },
+  "contact": {
+    "hotline": "400-123-45678",
+    "phone": "",
+    "email": "service@qifuyizhan.com",
+    "address": "北京经济技术开发区",
+    "workTime": "每周一到周五 9:00–18:00",
+    "wechat": "扫码关注公众号",
+    "qrcode": {
+      "mp": { "src": "assets/img/qrcode-mp.png", "label": "关注公众号" },
+      "channels": { "src": "assets/img/qrcode-channels.png", "label": "关注视频号" }
+    },
+    "offline": [{ "name": "北京 · 经济技术开发区", "address": "北京经济技术开发区（具体门牌以预约确认为准）", "phone": "" }]
+  },
+  "legal": {
+    "company": "一格字节",
+    "icp": "京ICP备2025144538号-2",
+    "police": "京公网安备11010902001134号",
+    "copyright": "企服驿站 · 一格字节"
+  },
+  "stats": [
+    { "num": "10", "unit": "+年", "label": "行业经验" },
+    { "num": "100", "unit": "+人", "label": "专业团队" },
+    { "num": "17", "unit": "项", "label": "在办服务" },
+    { "num": "24", "unit": "h", "label": "响应时效" }
+  ],
+  "trust": ["工商备案正规机构", "一对一专属顾问", "办理进度全程可查", "先方案后签约"],
+  "nav": [
+    { "label": "首页", "href": "index.html", "key": "home" },
+    { "label": "企业服务", "key": "services", "href": "services.html", "childrenFrom": "categories" },
+    { "label": "办事流程", "href": "process.html", "key": "process" },
+    { "label": "政策查询", "href": "policy.html", "key": "policy" },
+    { "label": "企业工具", "href": "tools.html", "key": "tools" },
+    {
+      "label": "算力模型",
+      "key": "compute",
+      "href": "compute.html",
+      "children": [
+        { "label": "算力市场", "href": "compute.html?tab=power", "desc": "按卡时租 GPU / CPU" },
+        { "label": "镜像市场", "href": "compute.html?tab=image", "desc": "开箱即用的运行环境" },
+        { "label": "模型市场", "href": "compute.html?tab=model", "desc": "现成模型与 API" }
+      ]
+    },
+    {
+      "label": "关于我们",
+      "key": "about",
+      "href": "about.html",
+      "children": [
+        { "label": "公司介绍", "href": "about.html", "desc": "我们做什么、凭什么" },
+        { "label": "联系我们", "href": "contact.html", "desc": "联系方式与咨询入口" }
+      ]
+    }
+  ],
+  "footer": {
+    "services": [
+      { "label": "公司注册", "href": "service.html?id=gongsi-zhuce" },
+      { "label": "代理记账", "href": "service.html?id=daili-jizhang" },
+      { "label": "商标注册", "href": "service.html?id=shangbiao-zhuce" },
+      { "label": "高新技术企业认定", "href": "service.html?id=gaoxin-rending" },
+      { "label": "公司注销", "href": "service.html?id=gongsi-zhuxiao" },
+      { "label": "全部服务", "href": "services.html" }
+    ],
+    "resources": [
+      { "label": "办事流程向导", "href": "process.html" },
+      { "label": "政策查询与匹配", "href": "policy.html" },
+      { "label": "企业工具箱", "href": "tools.html" },
+      { "label": "算力 · 镜像 · 模型", "href": "compute.html" },
+      { "label": "注册资本测算", "href": "tools.html#tool-capital" },
+      { "label": "用工成本测算", "href": "tools.html#tool-payroll" }
+    ],
+    "company": [
+      { "label": "公司介绍", "href": "about.html" },
+      { "label": "联系我们", "href": "contact.html" },
+      { "label": "服务条款", "href": "terms.html" },
+      { "label": "隐私政策", "href": "privacy.html" }
+    ]
+  },
+  "float": { "phone": "", "tip": "工作日 9:00–18:00 在线" },
+  "notice": "本站政策信息仅供参考，具体以官方发布为准；办理前建议由顾问核对最新口径。"
+}

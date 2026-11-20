@@ -1,0 +1,267 @@
+{
+  "_note": "企业生命周期四阶段任务库。service 字段关联 services.json 的 id；policies 关联 policies.json 的 id。",
+  "stages": [
+    {
+      "id": "prep",
+      "name": "筹备期",
+      "range": "注册前 0–3 个月",
+      "goal": "把“要不要开公司、怎么开”想清楚，一次把执照拿到手",
+      "desc": "这个阶段最容易犯的错误是“先注册再说”。注册资本、股权比例、注册区域一旦定错，后面变更成本远高于当初多花的两小时。",
+      "keyOutputs": ["明确的股权与出资方案", "合规注册地址", "营业执照与印章", "基本户与税务管户"],
+      "tasks": [
+        {
+          "id": "prep-1",
+          "title": "确定企业类型与注册资本",
+          "desc": "有限责任公司、个体工商户、合伙企业各有责任边界与税负差异。注册资本影响股东责任、投标门槛与客户信任，认缴不等于不用负责。",
+          "service": "gongsi-zhuce",
+          "policies": [],
+          "duration": "1–2 天",
+          "optional": false
+        },
+        {
+          "id": "prep-2",
+          "title": "设计股权结构与决策机制",
+          "desc": "避免 50:50 僵局，明确表决权、分红权与退出条款。早期口头约定是后期纠纷的最大来源。",
+          "service": "gongsi-zhuce",
+          "policies": [],
+          "duration": "1–2 天",
+          "optional": false
+        },
+        {
+          "id": "prep-3",
+          "title": "落实注册地址",
+          "desc": "自有场地需产权证明；无场地可用集中办公区地址，但要确认能收信函、能配合核查。",
+          "service": "zhuce-dizhi",
+          "policies": [],
+          "duration": "1–3 天",
+          "optional": false
+        },
+        {
+          "id": "prep-4",
+          "title": "办理营业执照与刻章",
+          "desc": "核名、设立登记、领照、刻章，一个流程跑完。经营范围要写得“够用且能扩展”。",
+          "service": "gongsi-zhuce",
+          "policies": ["pol-startup-subsidy"],
+          "duration": "3–5 个工作日",
+          "optional": false
+        },
+        {
+          "id": "prep-5",
+          "title": "开立基本户、完成税务报到",
+          "desc": "基本户用于工资与取现；税务报到决定后续申报义务。没开户、没报到就经营，会留下隐患。",
+          "service": "yinhang-shebao",
+          "policies": [],
+          "duration": "3–7 个工作日",
+          "optional": false
+        },
+        {
+          "id": "prep-6",
+          "title": "商标先行布局",
+          "desc": "品牌名一旦公开使用就可能被他人抢注。建议在公司成立同期提交核心类别商标申请。",
+          "service": "shangbiao-zhuce",
+          "policies": ["pol-ip-subsidy"],
+          "duration": "1–2 个工作日（提交）",
+          "optional": false
+        }
+      ],
+      "pitfalls": [
+        "注册资本虚高：股东按认缴额承担责任，出问题时要真金白银补上",
+        "股权 50:50 且无表决机制：重大事项直接卡死",
+        "用住宅地址注册后被核查：轻则列入异常，重则被要求迁址",
+        "领照后不报到、不申报：三个月内就可能进入非正常户"
+      ]
+    },
+    {
+      "id": "start",
+      "name": "起步期",
+      "range": "开业 0–12 个月",
+      "goal": "把合规底盘打牢，别在“该报的没报”上丢分",
+      "desc": "起步期企业通常没有专职财务，最容易出现漏报、错报、票据不全。这个阶段的成本很低，但补漏的成本很高。",
+      "keyOutputs": ["按月记账报税", "社保公积金正常缴纳", "工商年报按时提交", "适用的税收优惠已备案"],
+      "tasks": [
+        {
+          "id": "start-1",
+          "title": "建立记账与申报节奏",
+          "desc": "确定小规模或一般纳税人身份，固定每月票据交接日与申报日，避免逾期。",
+          "service": "daili-jizhang",
+          "policies": ["pol-small-vat", "pol-small-profit"],
+          "duration": "每月",
+          "optional": false
+        },
+        {
+          "id": "start-2",
+          "title": "完成社保公积金开户与增员",
+          "desc": "有雇工就应依法参保。开户、增员、基数申报一次做对，避免补缴与滞纳金。",
+          "service": "yinhang-shebao",
+          "policies": ["pol-social-subsidy"],
+          "duration": "3–5 个工作日",
+          "optional": false
+        },
+        {
+          "id": "start-3",
+          "title": "确认线上业务的许可类型",
+          "desc": "只展示做 ICP 备案；有会员收费、在线交易需 ICP 或 EDI 许可。判断错就是超范围经营。",
+          "service": "icp-xuke",
+          "policies": [],
+          "duration": "2–4 个月（如需许可）",
+          "optional": true
+        },
+        {
+          "id": "start-4",
+          "title": "按时完成首次工商年报",
+          "desc": "每年 1 月 1 日至 6 月 30 日申报上一年度年报，逾期列入经营异常名录。",
+          "service": "daili-jizhang",
+          "policies": [],
+          "duration": "半天",
+          "optional": false
+        },
+        {
+          "id": "start-5",
+          "title": "把能享受的优惠用上",
+          "desc": "小规模纳税人减免、小微企业所得税优惠、研发费用加计扣除，都需要正确归集才能享受。",
+          "service": "shuiwu-tijian",
+          "policies": ["pol-small-vat", "pol-small-profit", "pol-rd-deduction"],
+          "duration": "1–2 周",
+          "optional": false
+        }
+      ],
+      "pitfalls": [
+        "零收入就不申报：直接形成逾期记录",
+        "把个人消费发票入账：所得税前不得扣除，且属高风险",
+        "社保按最低基数“协商”缴纳：员工可投诉补缴，企业仍需补差额",
+        "只做 ICP 备案却收会员费：属于无证经营"
+      ]
+    },
+    {
+      "id": "grow",
+      "name": "成长期",
+      "range": "1–3 年，有稳定营收",
+      "goal": "拿资质、降税负、把政策红利变成真实现金",
+      "desc": "这个阶段政策收益最集中：高企、专精特新、研发加计扣除、体系认证，动辄几十万到上百万的税收与补贴差异。前提是提前 6–12 个月做准备。",
+      "keyOutputs": ["高新技术企业证书", "研发费用归集体系", "体系认证与信用等级", "知识产权组合"],
+      "tasks": [
+        {
+          "id": "grow-1",
+          "title": "做一次高企认定可行性评估",
+          "desc": "按知识产权、研发费用占比、科技人员比例、成长性四项打分，判断差距与补齐周期。",
+          "service": "gaoxin-rending",
+          "policies": ["pol-gaoxin"],
+          "duration": "3–5 个工作日",
+          "optional": false
+        },
+        {
+          "id": "grow-2",
+          "title": "搭建研发费用辅助账",
+          "desc": "研发人员工时、材料领用、折旧分摊要能追溯到项目。没有辅助账，加计扣除和高企都做不实。",
+          "service": "gaoxin-rending",
+          "policies": ["pol-rd-deduction", "pol-tech-sme"],
+          "duration": "1–2 个月",
+          "optional": false
+        },
+        {
+          "id": "grow-3",
+          "title": "补齐知识产权组合",
+          "desc": "发明专利 1 项或实用新型/软著 5 项以上，并与主营业务技术关联，避免“有证书但用不上”。",
+          "service": "ruanzhu",
+          "policies": ["pol-ip-subsidy"],
+          "duration": "1–6 个月",
+          "optional": false
+        },
+        {
+          "id": "grow-4",
+          "title": "办理投标与准入所需认证",
+          "desc": "ISO9001、AAA 信用等级常是投标门槛或加分项，按目标招标文件要求配置，不要办无法核验的证书。",
+          "service": "iso9001",
+          "policies": [],
+          "duration": "1–2 个月",
+          "optional": true
+        },
+        {
+          "id": "grow-5",
+          "title": "申报专精特新与科技型中小企业",
+          "desc": "梯度培育体系里，创新型中小企业→专精特新→小巨人，每一级都有对应的资金与政策倾斜。",
+          "service": "gaoxin-rending",
+          "policies": ["pol-specialized", "pol-tech-sme"],
+          "duration": "2–3 个月",
+          "optional": true
+        },
+        {
+          "id": "grow-6",
+          "title": "处理增资、股权变更或引入投资人",
+          "desc": "融资前后涉及股权变更、章程修订、注册资本调整，需同步处理个税与工商、银行信息。",
+          "service": "gongsi-biangeng",
+          "policies": ["pol-startup-loan"],
+          "duration": "1–4 周",
+          "optional": true
+        }
+      ],
+      "pitfalls": [
+        "为申报高企临时补研发费用：审计与评审一眼能看出，且存在补税风险",
+        "知识产权与主营无关：评分低，且后续抽查容易被取消资格",
+        "只知道所得税 15%，忽略研发加计扣除的叠加收益",
+        "认证机构不在认可范围：投标时证书无法核验"
+      ]
+    },
+    {
+      "id": "mature",
+      "name": "成熟期",
+      "range": "3 年以上 / 规模化经营",
+      "goal": "把合规做成护城河，同时为转型或退出留好后手",
+      "desc": "规模上来后，风险从“漏报”变成“结构性问题”：关联交易、跨区经营、历史遗留账务、资质到期。这个阶段更需要定期体检而不是临时救火。",
+      "keyOutputs": ["周期性税务体检报告", "资质与许可到期台账", "数字化与 AI 能力", "清晰的退出或扩张路径"],
+      "tasks": [
+        {
+          "id": "mature-1",
+          "title": "建立资质与许可到期台账",
+          "desc": "ICP 许可、ISO 证书、食品经营许可等都有有效期与年检要求，漏一次就可能影响经营与投标。",
+          "service": "icp-xuke",
+          "policies": [],
+          "duration": "1 周",
+          "optional": false
+        },
+        {
+          "id": "mature-2",
+          "title": "做一次全面税务合规体检",
+          "desc": "票据、申报、优惠适用、关联交易四个维度检查，输出分级风险清单与整改优先级。",
+          "service": "shuiwu-tijian",
+          "policies": ["pol-vat-refund"],
+          "duration": "5–7 个工作日",
+          "optional": false
+        },
+        {
+          "id": "mature-3",
+          "title": "用 AI 与数字化降低边际成本",
+          "desc": "客服、线索跟进、内容生产是最先能被 AI 承接的环节，先把接待接住再谈转化。",
+          "service": "ai-kefu",
+          "policies": [],
+          "duration": "5–10 个工作日",
+          "optional": true
+        },
+        {
+          "id": "mature-4",
+          "title": "核心人才引进与稳定",
+          "desc": "工作居住证、人才引进、股权激励，都是留住关键人的工具，需提前核对社保与个税口径。",
+          "service": "qiye-neixun",
+          "policies": ["pol-talent"],
+          "duration": "1–3 个月",
+          "optional": true
+        },
+        {
+          "id": "mature-5",
+          "title": "规划退出或架构调整",
+          "desc": "不再经营的企业及时注销，避免异常与连带责任；集团化经营则需评估持股架构与关联交易定价。",
+          "service": "gongsi-zhuxiao",
+          "policies": [],
+          "duration": "20 天–4 个月",
+          "optional": true
+        }
+      ],
+      "pitfalls": [
+        "证书到期未续：投标资格直接作废",
+        "长期零申报却有流水：易触发风险核查",
+        "关联公司之间随意调拨资金：可能被认定为分红或虚开",
+        "放任不经营的公司不管：法人被限高，影响新公司任职"
+      ]
+    }
+  ]
+}

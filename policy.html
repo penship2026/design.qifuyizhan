@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>政策查询 | 税收优惠、财政补贴、资质认定逐条拆解 - 企服驿站</title>
+<meta name="description" content="企服驿站政策库：增值税与所得税优惠、研发费用加计扣除、留抵退税、高新技术企业、专精特新、创业补贴、社保补贴、人才政策与创业贷款，逐条整理适用条件、申报材料与办理渠道。">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="企服驿站">
+<meta property="og:title" content="政策查询 | 税收优惠、财政补贴、资质认定逐条拆解 - 企服驿站">
+<meta property="og:description" content="企服驿站政策库：增值税与所得税优惠、研发费用加计扣除、留抵退税、高新技术企业、专精特新、创业补贴、社保补贴、人才政策与创业贷款，逐条整理适用条件、申报材料与办理渠道。">
+<meta property="og:image" content="assets/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="政策查询 | 税收优惠、财政补贴、资质认定逐条拆解 - 企服驿站">
+<meta name="twitter:description" content="企服驿站政策库：增值税与所得税优惠、研发费用加计扣除、留抵退税、高新技术企业、专精特新、创业补贴、社保补贴、人才政策与创业贷款，逐条整理适用条件、申报材料与办理渠道。">
+<meta name="twitter:image" content="assets/img/og.png">
+<link rel="icon" href="assets/img/favicon.png" type="image/png" sizes="128x128">
+<link rel="stylesheet" href="assets/css/base.css?v=20261116d">
+<link rel="stylesheet" href="assets/css/layout.css?v=20261116d">
+<link rel="stylesheet" href="assets/css/components.css?v=20261116d">
+<link rel="stylesheet" href="assets/css/pages.css?v=20261116d">
+<link rel="stylesheet" href="assets/css/responsive.css?v=20261116d">
+</head>
+<body>
+<a class="skip-link" href="#main">跳到主要内容</a>
+<header class="site-header" id="site-header" data-page="policy"></header>
+
+<main id="main">
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">首页</a><span class="sep">/</span><span class="current">政策查询</span>
+      </div>
+      <h1>政策查询</h1>
+      <p>不看新闻稿，只看能用的部分：谁能领、领多少、要满足什么条件、准备哪些材料、去哪申报。</p>
+      <div class="row" id="policy-stats"></div>
+    </div>
+  </section>
+
+  <section class="section-sm">
+    <div class="container policy-layout">
+      <a id="elig" class="anchor-target" aria-hidden="true"></a>
+      <div class="panel elig-panel" id="elig-panel"></div>
+
+      <div class="policy-filters">
+        <div class="filter-bar">
+          <div class="filter-search">
+            @@icon:search@@
+            <input type="search" id="pol-search" placeholder="搜索政策关键词，如「加计扣除」「高企」「补贴」" aria-label="搜索政策">
+          </div>
+          <select id="pol-level" aria-label="按层级筛选">
+            <option value="">全部层级</option>
+            <option value="国家">国家</option>
+            <option value="市级">北京市</option>
+          </select>
+          <select id="pol-stage" aria-label="按企业阶段筛选">
+            <option value="">全部阶段</option>
+            <option value="prep">筹备期</option>
+            <option value="start">起步期</option>
+            <option value="grow">成长期</option>
+            <option value="mature">成熟期</option>
+          </select>
+          <button class="btn btn-ghost btn-sm" id="pol-reset" type="button">重置</button>
+        </div>
+        <div class="chips" id="pol-types"></div>
+      </div>
+
+      <div class="result-line">
+        <span>命中 <strong id="pol-count">0</strong> 条政策</span>
+        <span class="faint" id="pol-hint">按类型与阶段筛选，可快速缩小范围</span>
+      </div>
+
+      <div class="policy-list" id="pol-list"></div>
+      <div id="pol-empty" class="empty-state hide">
+        @@icon:search@@
+        <h3>没有匹配的政策</h3>
+        <p>试试其他关键词，或让顾问按你的行业与规模做一次可申报政策梳理。</p>
+        <a class="btn btn-primary mt-16" href="contact.html">帮我梳理可申报政策</a>
+      </div>
+
+      <div class="notice">
+        @@icon:info@@
+        <span>政策条款、比例与金额随年度调整，本页为整理摘要，不构成税务或法律意见。申报前请以官方原文为准，或由顾问按当年口径核对。</span>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer" id="site-footer"></footer>
+<script src="assets/js/core.js?v=20261116d"></script>
+<script src="assets/js/nav.js?v=20261116d"></script>
+<script src="assets/js/eligibility.js?v=20261116d"></script>
+<script src="assets/js/policy.js?v=20261116d"></script>
+</body>
+</html>

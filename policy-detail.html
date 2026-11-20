@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>政策详情 | 企服驿站</title>
+<meta name="description" content="政策原文要点整理：适用对象、享受条件、所需材料、申报渠道与有效期。">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="企服驿站">
+<meta property="og:title" content="政策详情 | 企服驿站">
+<meta property="og:description" content="政策原文要点整理：适用对象、享受条件、所需材料、申报渠道与有效期。">
+<meta property="og:image" content="assets/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="政策详情 | 企服驿站">
+<meta name="twitter:description" content="政策原文要点整理：适用对象、享受条件、所需材料、申报渠道与有效期。">
+<meta name="twitter:image" content="assets/img/og.png">
+<link rel="icon" href="assets/img/favicon.png" type="image/png" sizes="128x128">
+<link rel="stylesheet" href="assets/css/base.css?v=20261116d">
+<link rel="stylesheet" href="assets/css/layout.css?v=20261116d">
+<link rel="stylesheet" href="assets/css/components.css?v=20261116d">
+<link rel="stylesheet" href="assets/css/pages.css?v=20261116d">
+<link rel="stylesheet" href="assets/css/responsive.css?v=20261116d">
+</head>
+<body>
+<a class="skip-link" href="#main">跳到主要内容</a>
+<header class="site-header" id="site-header" data-page="policy"></header>
+
+<main id="main">
+  <section class="policy-head">
+    <div class="container">
+      <div class="breadcrumb-light" style="padding:0;border:0;background:none;margin-bottom:18px">
+        <a href="index.html">首页</a><span class="sep">/</span><a href="policy.html">政策查询</a><span class="sep">/</span>
+        <span id="crumb-title" class="current" style="color:var(--muted)">政策详情</span>
+      </div>
+      <div id="policy-loading"><div class="skeleton" style="height:120px"></div></div>
+      <div id="policy-head-content" class="hide">
+        <div class="ph-meta" id="ph-meta"></div>
+        <h1 id="ph-title"></h1>
+        <div class="ph-tags" id="ph-tags"></div>
+      </div>
+      <div id="policy-error" class="empty-state hide">
+        @@icon:alert@@
+        <h3>没有找到这条政策</h3>
+        <p>链接可能已失效，或者政策已被新文件替代。</p>
+        <a class="btn btn-primary mt-16" href="policy.html">返回政策库</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="detail-body">
+    <div class="container">
+      <div id="policy-layout" class="detail-layout hide">
+        <div class="stack-lg" id="policy-main"></div>
+        <aside class="sticky-side" id="policy-side"></aside>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer" id="site-footer"></footer>
+<script src="assets/js/core.js?v=20261116d"></script>
+<script src="assets/js/nav.js?v=20261116d"></script>
+<script src="assets/js/eligibility.js?v=20261116d"></script>
+<script src="assets/js/policy-detail.js?v=20261116d"></script>
+</body>
+</html>

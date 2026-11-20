@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>算力模型 | 算力市场、镜像市场、模型市场 - 企服驿站</title>
+<meta name="description" content="企服驿站算力模型频道：算力市场按卡时租 GPU、镜像市场提供开箱即用的运行环境、模型市场可直接试用并接 API。三个平台在本站内直接打开，操作与原站一致。">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="企服驿站">
+<meta property="og:title" content="算力模型 | 算力市场、镜像市场、模型市场 - 企服驿站">
+<meta property="og:description" content="企服驿站算力模型频道：算力市场按卡时租 GPU、镜像市场提供开箱即用的运行环境、模型市场可直接试用并接 API。">
+<meta property="og:image" content="assets/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="算力模型 | 算力市场、镜像市场、模型市场 - 企服驿站">
+<meta name="twitter:description" content="算力市场、镜像市场、模型市场三块外部平台，在本站内直接可用。">
+<meta name="twitter:image" content="assets/img/og.png">
+<link rel="icon" href="assets/img/favicon.png" type="image/png" sizes="128x128">
+<link rel="stylesheet" href="assets/css/base.css?v=20261116d">
+<link rel="stylesheet" href="assets/css/layout.css?v=20261116d">
+<link rel="stylesheet" href="assets/css/components.css?v=20261116d">
+<link rel="stylesheet" href="assets/css/pages.css?v=20261116d">
+<link rel="stylesheet" href="assets/css/responsive.css?v=20261116d">
+</head>
+<body>
+<a class="skip-link" href="#main">跳到主要内容</a>
+<header class="site-header" id="site-header" data-page="compute"></header>
+
+<main id="main">
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">首页</a><span class="sep">/</span><span class="current">算力模型</span>
+      </div>
+      <h1>算力、镜像、模型，三块资源随取随用</h1>
+      <p>算力市场按卡时租用 GPU，镜像市场给现成的运行环境，模型市场可以直接调用现成能力。三块平台都在本页内直接打开，操作与原站一致，页面顶部不再重复平台自己的导航。</p>
+    </div>
+  </section>
+
+  <section class="section-sm">
+    <div class="container">
+      <div class="compute-tabs" id="compute-tabs" role="tablist" aria-label="资源市场切换"></div>
+
+      <div class="compute-strip" id="compute-info" aria-live="polite"></div>
+
+      <div class="compute-stage">
+        <div class="compute-frame-box is-cropped" id="compute-frame-box">
+          <div class="compute-loading" id="compute-loading" aria-hidden="true">
+            <span class="compute-spinner" aria-hidden="true"></span>
+            <span id="compute-loading-text">正在加载平台页面…</span>
+          </div>
+          <iframe id="compute-frame" title="资源市场页面" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+          <noscript><p class="compute-fallback">需要开启 JavaScript 才能在内嵌页打开，或直接访问对应平台。</p></noscript>
+        </div>
+        <p class="compute-tip">@@icon:info@@ 三块页面由合作平台提供，页面顶部导航已隐藏以免与本站重复；若某块打不开或显示异常，点上方右侧的刷新图标重试。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-alt" id="compute-help">
+    <div class="container">
+      <div class="cta-band">
+        <div>
+          <h2 id="compute-help-title">不确定选哪种卡、哪个镜像、哪个模型？</h2>
+          <p id="compute-help-desc">把业务场景、数据量、预算和上线时间讲清楚，我们给出选型对比与部署路径。</p>
+        </div>
+        <div class="row">
+          <a class="btn btn-light btn-lg" id="compute-help-service" href="service.html?id=suanli-moxing">看服务详情</a>
+          <a class="btn btn-primary btn-lg" href="contact.html">预约顾问</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer" id="site-footer"></footer>
+<script src="assets/js/core.js?v=20261116d"></script>
+<script src="assets/js/nav.js?v=20261116d"></script>
+<script src="assets/js/compute.js?v=20261116d"></script>
+</body>
+</html>
